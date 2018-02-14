@@ -1,21 +1,14 @@
 <span ng-if="$ctrl.hasSaasOfferings()" class="saas-offerings-container">
   <h1 ng-if="$ctrl.saasTitle">{{$ctrl.saasTitle}}</h1>
   <div class="saas-list" ng-class="{'expanded': $ctrl.sassListExpanded, 'items-overflow': $ctrl.itemsOverflow}" items="$ctrl.saasOfferings">
-    <div class="card" ng-repeat="item in $ctrl.saasOfferings">
-      <a ng-href="{{item.url}}" target="_blank" class="card-content">
-        <div class="card-icon">
-          <img ng-if="item.image" ng-src="{{item.image}}" alt="">
-          <span ng-if="!item.image" class="icon {{item.icon}}" aria-hidden="true"></span>
-        </div>
-        <div class="card-title">{{item.title}}</div>
-        <truncate-long-text
-                class="card-description hidden-xs"
-                content="item.description"
-                limit="120"
-                use-word-boundary="true">
-        </truncate-long-text>
-      </a>
-    </div>
+    <saas-item
+      ng-repeat='item in $ctrl.saasOfferings'
+      title='item.title'
+      description='item.description'
+      url='item.url'
+      image='item.image'
+      icon='item.icon'>
+    </saas-item>
   </div>
   <div ng-if="$ctrl.itemsOverflow" class="sass-list-expander-container">
     <a href="" class="sass-list-expander" ng-class="{'expanded': $ctrl.sassListExpanded}" ng-click="$ctrl.toggleListExpand()">
