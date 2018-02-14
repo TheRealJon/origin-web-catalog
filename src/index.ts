@@ -1,5 +1,5 @@
 import * as angular from 'angular';
-import { react2angular } from 'react2angular'
+import { react2angular } from 'react2angular';
 import './styles/main.less';
 
 // Aphabetical order please
@@ -21,9 +21,9 @@ import {landingPage} from './components/landing-page/landing-page.component';
 import {orderService} from './components/order-service/order-service.component';
 import {overlayPanel} from './components/overlay-panel/overlay-panel.component';
 import {projectsSummary} from './components/projects-summary/projects-summary.component';
-import {reactButton} from './components/react-button/react-button.component';
+import {ReactButton} from './components/react-button/react-button.component';
 import {saasList} from './components/saas-list/saas-list.component';
-import {saasItem} from './components/saas-item/saas-item.component';
+import {SaasItem} from './components/saas-item/saas-item.component';
 import {selectPlan} from './components/select-plan/select-plan.component';
 import {selectProject} from './components/select-project/select-project.component';
 import {servicesView} from './components/services-view/services-view.component';
@@ -48,9 +48,9 @@ angular
   .component('orderService', orderService)
   .component('overlayPanel', overlayPanel)
   .component('projectsSummary', projectsSummary)
-  .component('reactButton', react2angular(reactButton))
+  .component('reactButton', react2angular(ReactButton))
   .component('saasList', saasList)
-  .component('saasItem', saasItem)
+  .component('saasItem', react2angular(SaasItem, ['title', 'description', 'url', 'image', 'icon']))
   .component('selectPlan', selectPlan)
   .component('selectProject', selectProject)
   .component('servicesView', servicesView)

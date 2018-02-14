@@ -48,13 +48,13 @@ module.exports = {
         ]
       },
       {
-        test: /.ts$/,
+        test: /.tsx?$/,
         exclude: /node_modules/,
         loader: 'tslint-loader',
         enforce: 'pre'
       },
       {
-        test: /\.ts$/,
+        test: /\.tsx?$/,
         exclude: /node_modules/,
         loaders: [
           'ng-annotate-loader',
@@ -186,7 +186,9 @@ module.exports.resolve = {
     '.webpack.js',
     '.web.js',
     '.js',
-    '.ts'
+    '.jsx',
+    '.ts',
+    '.tsx'
   ],
   modules: ["node_modules", "bower_components"],
   descriptionFiles: ["package.json", "bower.json"]

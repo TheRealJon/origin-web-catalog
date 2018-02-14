@@ -1,15 +1,13 @@
-<div class="card">
-  <a ng-href="{{$ctrl.url}}" target="_blank" class="card-content">
-    <div class="card-icon">
-      <img ng-if="$ctrl.image" ng-src="{{$ctrl.image}}" alt="">
-      <span ng-if="!$ctrl.image" class="icon {{$ctrl.icon}}" aria-hidden="true"></span>
-    </div>
-    <div class="card-title">{{$ctrl.title}}</div>
-    <truncate-long-text
-            class="card-description hidden-xs"
-            content="$ctrl.description"
-            limit="120"
-            use-word-boundary="true">
-    </truncate-long-text>
-  </a>
-</div>
+<a ng-href="{{$ctrl.url}}" target="_blank" class="card-content">
+  <div class="card-icon">
+    <img ng-if="$ctrl.image" ng-src="{{$ctrl.image}}" alt="">
+    <span ng-if="!$ctrl.image" class="icon {{$ctrl.icon}}" aria-hidden="true"></span>
+  </div>
+  <div class="card-title">{{$ctrl.title}}</div>
+  <truncate-long-text
+          class="card-description hidden-xs"
+          content="$ctrl.description"
+          limit="120"
+          use-word-boundary="true">
+  </truncate-long-text>
+</a>

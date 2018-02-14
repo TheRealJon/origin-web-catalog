@@ -3,6 +3,7 @@
   <div class="saas-list" ng-class="{'expanded': $ctrl.sassListExpanded, 'items-overflow': $ctrl.itemsOverflow}" items="$ctrl.saasOfferings">
     <saas-item
       ng-repeat='item in $ctrl.saasOfferings'
+      class="card"
       title='item.title'
       description='item.description'
       url='item.url'
